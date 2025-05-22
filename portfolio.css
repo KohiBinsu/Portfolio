@@ -1,0 +1,1095 @@
+@font-face {
+    font-family: Arcadepix;
+    src: url('Arcadepix Plus.ttf');
+}
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: Arcadepix;
+}
+
+html {
+
+    font-size: 23px;
+}
+
+body {
+    
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: white;
+    color: black;
+}
+
+header {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 100;
+}
+
+.logo {
+
+    font-size: 40px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.5s ease;
+    animation: fadeIn 1.5s ease-in;
+    animation-timeline: view();
+    line-height: 1;
+}
+
+.logo:hover {
+
+    transform: scale(1.1);
+    transform-origin: center;
+}
+
+/* Hamburger Menu Button */
+.menu-btn {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-btn__burger {
+    width: 30px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+    position: relative;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+}
+
+.menu-btn__burger::before {
+    transform: translateY(-10px);
+}
+
+.menu-btn__burger::after {
+    transform: translateY(10px);
+}
+
+/* Animation for menu button */
+.menu-btn.open .menu-btn__burger {
+    background: transparent;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg);
+}
+
+/* Navigation Styles */
+.navbar {
+    animation: fadeIn 1.5s ease-in;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-link {
+    font-size: 25px;
+    color: white;
+    font-weight: 300;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+/* Mobile Navigation */
+@media(max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    .menu-btn {
+        display: flex;
+        margin-right: 10px;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 80px 20px;
+        transition: 0.3s ease-in-out;
+        overflow-y: auto;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar.active {
+        right: 0;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .nav-link {
+        font-size: 28px;
+        display: block;
+        padding: 10px 0;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .nav-link:hover {
+        color: skyblue;
+        transform: translateX(10px);
+    }
+}
+
+/* iPhone SE */
+@media screen and (max-width: 375px) {
+    .logo {
+        font-size: 32px;
+    }
+
+    .nav-link {
+        font-size: 24px;
+    }
+}
+
+/* iPhone XR */
+@media screen and (min-width: 414px) and (max-width: 896px) {
+    .logo {
+        font-size: 36px;
+    }
+
+    .nav-link {
+        font-size: 26px;
+    }
+}
+
+/* Landscape orientation */
+@media screen and (max-height: 450px) and (orientation: landscape) {
+    .navbar {
+        padding: 60px 20px;
+    }
+
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .nav-link {
+        font-size: 22px;
+        padding: 5px 0;
+    }
+}
+
+.landing {
+
+    min-height: 100vh;
+    padding: 80px 9% 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    background-image: url('homebg.png');
+    background-size: cover;
+}
+
+.landcontent {
+
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1.1;
+    color: white;
+    animation: opacity 1s ease-in-out;
+}
+
+@keyframes opacity {
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+.landcontent h5 {
+    
+    font-size: 25px;
+}
+
+span {
+
+    color: skyblue;
+    font-size: 30px;
+}
+
+.landcontent h3{
+
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.home-img img {
+    border-radius: 50%;
+    position: relative;
+    width: 32vw;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center 20%;  /* Adjust to focus on face */
+    box-shadow: 0 5px 10px black, 3px 5px 10px gray;
+    cursor: pointer;
+    animation: pop 1s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+}
+
+@keyframes pop {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.home-img img:hover {
+    transform: scale(1.1);
+}
+
+.resume {
+
+    display: inline-block;
+    padding: 13px;
+    background: white;
+    border-radius: 30px;
+    font-size: 10px;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 200px;
+    border: none;
+    transition: 0.3s ease;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 15px;
+    z-index: 0;
+    position: relative;
+    scale: 90%;
+}
+
+.resume::after{
+
+    content: '';
+    background: linear-gradient(to right, skyblue, royalblue);
+    height: 100%;
+    width: 0px;
+    border-radius: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: 150ms ease-in-out;
+}
+
+.resume:hover::after{
+
+    width: 100%;
+}
+
+.resume:hover {
+
+    color: white;
+}
+
+.h5 span {
+
+    color: skyblue;
+}
+
+@media (max-width: 768px) {
+
+    .landing{
+        gap: 1px;
+        flex-direction: column;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .landing .landcontent h3{
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .landcontent h4 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .landcontent h5 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .home-img {
+        visibility: hidden;
+    }
+
+    .resume {
+        margin-left: 55px;
+    }
+}
+
+.about {
+    background-image: url('Pallet_Town.png');
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    color: white;
+    z-index: 0;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about h3 {
+    font-size: 45px;
+    animation: opacity 1s ease-in-out;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 50px;
+}
+
+.firstbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 200px;
+}
+
+/* Base styles for all boxes */
+.educ, .hobby, .info {
+    width: 200px;
+    height: 100px;
+    position: relative;
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+    padding-top: 80px;
+    z-index: 1;
+    cursor: pointer;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backface-visibility: hidden;
+}
+
+.educ {
+    border: 1px solid rgb(250, 170, 109);
+    background-color: rgb(242, 104, 74);
+    color: rgb(255, 238, 176);
+    font-size: 30px;
+}
+
+.hobby {
+    border: 1px solid rgb(123, 183, 183);
+    background-color: rgb(63, 148, 144);
+    color: rgb(234, 199, 135);
+    font-size: 30px;
+}
+
+.info {
+    border: 1px solid rgb(172,197,223);
+    background-color: rgb(116,156,203);
+    color: rgb(214,212,212);
+    font-size: 25px;
+}
+
+/* Info sections */
+.school, .hob, .perso {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.school {
+    width: 500px;
+    color: rgb(255, 238, 176);
+    border: 2px solid rgb(250, 170, 109);
+    padding: 35px;
+    overflow: visible;
+}
+
+.school p {
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+/* School sections spacing */
+.school div {
+    margin-bottom: 20px;
+}
+
+.school div:last-child {
+    margin-bottom: 0;
+}
+
+.school strong {
+    color: rgb(252, 196, 153);
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Remove br tags from HTML and use this spacing instead */
+.school p:last-of-type {
+    margin-bottom: 15px;
+}
+
+.hob {
+    width: 300px;
+    color: rgb(234, 199, 135);
+    border: 2px solid rgb(123, 183, 183);
+    padding: 35px;
+}
+
+.hob ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hob li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+    padding: 5px;
+}
+
+.hob li:last-child {
+    margin-bottom: 0;
+}
+
+.hob p {
+    margin: 0;
+    line-height: 1.5;
+    font-size: 1.1em;
+}
+
+.hobby-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    filter: brightness(1.2);
+    display: block;
+    image-rendering: -webkit-optimize-contrast;  /* For better icon rendering */
+    image-rendering: crisp-edges;
+}
+
+.hob li:hover .hobby-icon {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+.perso {
+    width: 600px;
+    color: rgb(214,212,212);
+    border: 2px solid rgb(172,197,223);
+    padding: 35px;
+}
+
+.perso p {
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+/* Add a nice fade effect to the last paragraph in personal info */
+.perso p:last-child {
+    margin-top: 20px;
+    line-height: 1.6;
+    font-style: italic;
+    color: rgb(234, 234, 234);
+}
+
+/* Scrollbar styling for info sections */
+.school::-webkit-scrollbar,
+.hob::-webkit-scrollbar,
+.perso::-webkit-scrollbar {
+    width: 8px;
+}
+
+.school::-webkit-scrollbar-track,
+.hob::-webkit-scrollbar-track,
+.perso::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.school::-webkit-scrollbar-thumb,
+.hob::-webkit-scrollbar-thumb,
+.perso::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+/* Images in boxes */
+.educimg img, .hobimg img, .persoimg img {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* Add hover effect for the images */
+.educ:hover .educimg img,
+.hobby:hover .hobimg img,
+.info:hover .persoimg img {
+    transform: translateX(-50%) scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .firstbox {
+        flex-direction: column;
+        margin-top: 40px;
+        gap: 30px;
+    }
+
+    .educ, .hobby, .info {
+        margin: 0;
+    }
+
+    .school, .hob, .perso {
+        width: 90%;
+        max-width: 450px;
+        padding: 25px;
+    }
+
+    .hob {
+        width: 90%;
+        max-width: 300px;
+        padding: 25px;
+    }
+
+    .hobby-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .hob li {
+        margin-bottom: 15px;
+        gap: 12px;
+    }
+}
+
+.skills {
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('sonic.jpg');
+    padding: 40px 20px;
+}
+
+.skills h3 {
+    font-size: 48px;
+    margin-bottom: 100px;
+    color: white;
+    margin-top: -100px;
+    animation: opacity 1s ease-in-out;
+}
+
+.skillcont p {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #3061e3;
+    animation: opacity 1s ease-in-out;
+}
+
+.skillpic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    animation: opacity 1s ease-in-out;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skillpic section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.skillpic img {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skillpic img:hover {
+    transform: scale(1.1);
+}
+
+.js img {
+    scale: 0.75;
+}
+
+/* Tablet and smaller desktop screens */
+@media (max-width: 1024px) {
+    .skills h3 {
+        font-size: 42px;
+        margin-bottom: 80px;
+        margin-top: -80px;
+    }
+
+    .skillcont p {
+        font-size: 35px;
+        margin-bottom: 30px;
+    }
+
+    .skillpic img {
+        width: 130px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .skills {
+        padding: 60px 15px;
+    }
+
+    .skills h3 {
+        font-size: 36px;
+        margin-bottom: 60px;
+        margin-top: 0;
+    }
+
+    .skillcont p {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .skillpic {
+        gap: 20px;
+    }
+
+    .skillpic section {
+        padding: 15px;
+    }
+
+    .skillpic img {
+        width: 110px;
+    }
+}
+
+/* iPhone SE */
+@media screen and (max-width: 375px) {
+    .skills h3 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .skillcont p {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .skillpic {
+        gap: 15px;
+    }
+
+    .skillpic section {
+        padding: 10px;
+    }
+
+    .skillpic img {
+        width: 90px;
+    }
+}
+
+/* iPhone XR */
+@media screen and (min-width: 414px) and (max-width: 896px) {
+    .skills h3 {
+        font-size: 34px;
+        margin-bottom: 50px;
+    }
+
+    .skillcont p {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .skillpic img {
+        width: 100px;
+    }
+}
+
+/* Landscape orientation */
+@media screen and (max-height: 450px) and (orientation: landscape) {
+    .skills {
+        padding: 20px;
+    }
+
+    .skills h3 {
+        font-size: 30px;
+        margin: 0 0 30px 0;
+    }
+
+    .skillcont p {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .skillpic {
+        gap: 15px;
+    }
+
+    .skillpic section {
+        padding: 10px;
+    }
+
+    .skillpic img {
+        width: 80px;
+    }
+
+    .js img {
+        scale: 0.85;
+    }
+}
+
+.contact {
+
+    background-image: url('kirby.png');
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.contact-box {
+    background: pink;
+    padding: 25px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #3578c6;
+}
+
+@media (max-width: 768px) {
+
+    .contact {
+
+        background-position: center;
+        background-size: cover;
+    }
+    .contact-box {
+        width: 100%;
+        padding: 20px;
+    }
+
+    input, textarea {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+footer {
+
+    background-color: skyblue;
+    text-align: center;
+}
+
+/* General mobile styles */
+@media (max-width: 768px) {
+    html {
+        font-size: 18px;
+    }
+
+    .landing {
+        padding: 60px 5% 60px;
+        gap: 30px;
+    }
+
+    .landcontent h3 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .landcontent h4 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .landcontent h5 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .resume {
+        display: block;
+        margin: 20px auto;
+    }
+
+    /* About section adjustments */
+    .about h3 {
+        font-size: 35px;
+        padding-top: 60px;
+    }
+
+    .firstbox {
+        flex-direction: column;
+        margin: 40px auto;
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .educ, .hobby, .info {
+        width: 180px;
+        height: 90px;
+        margin: 0 auto;
+        padding: 35px 20px;
+        padding-top: 75px;
+    }
+
+    .educimg img, .hobimg img, .persoimg img {
+        width: 50px;
+        height: 50px;
+        top: 15px;
+    }
+
+    /* Info sections */
+    .school, .hob, .perso {
+        width: 85%;
+        max-width: none;
+        padding: 25px;
+        font-size: 0.9em;
+    }
+
+    .school p, .hob p, .perso p {
+        line-height: 1.6;
+    }
+}
+
+/* iPhone SE specific styles */
+@media screen and (max-width: 375px) {
+    html {
+        font-size: 16px;
+    }
+
+    .landcontent h3 {
+        font-size: 35px;
+    }
+
+    .landcontent h4, .landcontent h5 {
+        font-size: 22px;
+    }
+
+    .about h3 {
+        font-size: 30px;
+    }
+
+    .educ, .hobby, .info {
+        width: 160px;
+        height: 85px;
+        padding-top: 70px;
+    }
+
+    .educimg img, .hobimg img, .persoimg img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .school, .hob, .perso {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .school p, .hob p, .perso p {
+        font-size: 0.85em;
+        line-height: 1.5;
+        margin-bottom: 8px;
+    }
+}
+
+/* iPhone XR specific styles */
+@media screen and (min-width: 414px) and (max-width: 896px) {
+    html {
+        font-size: 20px;
+    }
+
+    .landcontent h3 {
+        font-size: 42px;
+    }
+
+    .landcontent h4, .landcontent h5 {
+        font-size: 28px;
+    }
+
+    .about h3 {
+        font-size: 38px;
+    }
+
+    .educ, .hobby, .info {
+        width: 200px;
+        height: 100px;
+    }
+
+    .educimg img, .hobimg img, .persoimg img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .school, .hob, .perso {
+        width: 85%;
+        padding: 30px;
+    }
+
+    .school p, .hob p, .perso p {
+        font-size: 0.95em;
+        line-height: 1.7;
+    }
+}
+
+/* Handle landscape orientation */
+@media screen and (max-height: 450px) and (orientation: landscape) {
+    .landing {
+        padding: 40px 5%;
+    }
+
+    .firstbox {
+        flex-direction: row;
+        margin: 20px auto;
+        gap: 20px;
+    }
+
+    .educ, .hobby, .info {
+        width: 150px;
+        height: 80px;
+        padding-top: 65px;
+    }
+
+    .educimg img, .hobimg img, .persoimg img {
+        width: 40px;
+        height: 40px;
+        top: 15px;
+    }
+
+    .school, .hob, .perso {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}

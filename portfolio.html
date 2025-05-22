@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="./portfolio.css">
+    <style>
+        @font-face {
+            font-family: Arcadepix;
+            src: url('Arcadepix Plus.ttf');
+        }
+        * {
+            font-family: Arcadepix;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Header -->
+    <!-- Navbar -->
+    <header>
+        <a href="#" class="logo">Aaron</a>
+
+        <div class="menu-btn">
+            <div class="menu-btn__burger"></div>
+        </div>
+
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="#skills" class="nav-link">Qualifications</a></li>
+                <li><a href="#contact" class="nav-link">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Landing Page -->
+    <div class="landing" id="landing">
+        
+        <section class="home-img">
+            <img src="IMG_20250414_195823_121.jpg" alt="">
+        </section>
+        <section class="landcontent">
+        <h4>Hi! I am</h4>
+        <span><h3>Vince Aaron</h3></span>
+        <h5>I'm a <span>Front End Developer</span></h5>
+        <button class="resume"><a href="Vince_Aaron_Casacop_CV (1).pdf" download target="_blank"><span>Download CV</span></a></button>
+        </section>
+
+    </div>
+
+    <div class="about" id="about">
+
+        <h3 align="center">About Me</h3>
+        <div class="firstbox">
+            <section class="educ">
+                <p>Education</p>
+                <section class="educimg">
+                    <img src="charizard.png" alt="Charizard Icon">
+                </section>
+            </section>
+            <section class="hobby">
+                <p>Hobbies</p>
+                <section class="hobimg">
+                    <img src="venusaur.png" alt="Venusaur Icon">
+                </section>
+            </section>
+            <section class="info">
+                <p>Personal Info</p>
+                <section class="persoimg">
+                    <img src="blastoise.png" alt="Blastoise Icon">
+                </section>
+            </section>
+        </div>
+        <div class="secondbox">
+            <section class="school">
+                <div>
+                    <p><strong>Paliparan II Integrated Highschool</strong></p>
+                    <p>2016 - 2022</p>
+                    <p>High School and Senior High School</p>
+                </div>
+                <div>
+                    <p><strong>National University - Dasmarinas City</strong></p>
+                    <p>2022 - 2023</p>
+                    <p>Bachelor of Science in Computer Engineering</p>
+                </div>
+                <div>
+                    <p><strong>National College of Science and Technology</strong></p>
+                    <p>2025 - Present</p>
+                    <p>Bachelor of Science in Computer Engineering</p>
+                </div>
+            </section>
+            <section class="hob">
+                <ul>
+                    <li>
+                        <img src="icons/icons8-riot-games-32.ico" alt="Riot Games Icon" class="hobby-icon">
+                        <p>Online Games</p>
+                    </li>
+                    <li>
+                        <img src="icons/icons8-band-32.ico" alt="Music Note Icon" class="hobby-icon">
+                        <p>Singing</p>
+                    </li>
+                    <li>
+                        <img src="icons/icons8-basketball-32.ico" alt="NBA Icon" class="hobby-icon">
+                        <p>Basketball</p>
+                    </li>
+                    <li>
+                        <img src="icons/one piece.ico" alt="One Piece Icon" class="hobby-icon">
+                        <p>Anime</p>
+                    </li>
+                </ul>
+            </section>
+            <section class="perso">
+                <p>Full Name: Casacop, Vince Aaron Tandang</p>
+                <p>Birthdate: Nov. 30, 2003</p>
+                <p>Age: 21</p>
+                <p>Address: Blk. 31 Lot 1 Ph. 3 Mabuhay City, </p>
+                <p>Paliparan 3, Dasmarinas City, Cavite, Philippines</p>
+                <p>I am a computer engineering student that has knowledge about front end programming languages. I have yet to have any working experience and I would love to work with you!</p>
+            </section>
+        </div>
+    </div>
+
+    <div class="skills" id="skills">
+
+        <h3 align="center">Qualifications</h3>
+        <div class="skillcont">
+            <p>Front End Programming Languages</p>
+        </div>
+        <div class="skillpic">
+            <section class="html">
+                <a href="https://html.com/" target="_blank">
+                    <img src="html.png" alt="">
+                </a>
+            </section>
+            <section class="css">
+                <a href="https://web.dev/learn/css" target="_blank">
+                    <img src="css.png" alt="">
+                </a>
+            </section>
+            <section class="js">
+                <a href="https://www.javascript.com/" target="_blank">
+                    <img src="js.png" alt="">
+                </a>
+            </section>
+        </div>
+    </div>
+
+    <div class="contact" id="contact">
+        <section class="contact-box">
+            <h2>Contact Me</h2>
+            <form action="https://formsubmit.co/aaron.casacop30@gmail.com" method="POST">
+                <!-- Honeypot -->
+                <input type="text" name="_honey" style="display: none;">
+                
+                <!-- Disable Captcha -->
+                <input type="hidden" name="_captcha" value="false">
+                
+                <!-- Success Page -->
+                <input type="hidden" name="_next" value="https://vincearoncasacop.github.io/portfolio/thanks.html">
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy;Vince Aaron Casacop 2025 All Rights Reserved.</p>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>
